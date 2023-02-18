@@ -26,3 +26,33 @@ ps: we can enable aws autoprompt in cloudshell by typing "aws `[--cli-auto-promp
 do the sanity check to check we are in correct account when using cloudshell.
 
 aws sts get-caller-identity  "sts - security token service" 
+
+# AWS Pricing and Billing Walkthrough
+
+Pricing Various region to region.
+
+1. Click on Free-tier link to check the free-tier usage details.
+2. Go to Billing preferences and tick the checkbox for "receive free-tier alert" and "receive billing alert" and save the preferences.
+3. And on same page above "save preferences" click on Manage billing alerts link (this is basically a Cloudwatch aws managed service for monitoring usage metrics). This service is region specifc and present only N.Virgina
+4. click on "Alarm" tab on the left services tab and expand to "in alarm" tab to creat or view the present billing alarm
+5. Create alarm -> select Metrics -> select Billing -> Total  Estimated Changes -> select the USD charges and edit the metric name and modify the required conditions. Here set the define threshold value to $10 USD and click Next
+6. Set Alarm state triger to "In alarm"  -> Select create new topic and provide the required name and email -> click creat new topic -> click Next 
+7. 10 alarms are fee on the free-tier. Give the name to the alarm set and click "Next"
+8. click finally on " Create Alarm" and you will get the green notification on top as successfully created alarm with the alarm name you set. 
+
+# Cost Allocation Tags
+
+Go to billing Dasboard from the user menu on the top right dropdown on your aws account user name.
+after setting the budget alters (2 budget alerts are free) in budget tab got to cost allocation tag link and add the tags with key: value pair names based on your user defined names. This is a free form text. This will help to filter the services based on the tag names for report genrations later
+
+# Cost Explorer 
+
+Again go to Billing dashboard and select the cost explorer link under Cost Managment Tab to exploer on the report genaration as per the finance need for reconcliation. 
+
+# Applying/Redeeming aws credit
+
+Go to credits and click on redeem credit to apply the voucher code
+
+# AWS Calculator
+
+Go to https://calculator.aws click on create estimate to check the estimated cost by selecting the required services
